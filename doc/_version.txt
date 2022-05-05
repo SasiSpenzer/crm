@@ -1,0 +1,85 @@
+================ local ==================
+
+
+
+$blocked = 0; //add_advert 1351
+
+
+================ dev ====================
+
+2019-3-23
+DB_ARCHIVE=lpwarchive
+
+2018-12-20
+ALTER TABLE `cities` ADD `district` VARCHAR(255) NULL AFTER `region`;
+
+2018/5/14
+scripts/deactivate_ads_not_updated.php
+scripts/deactivate_ads_over_due_payment.php
+
+
+
+
+================ live ===================
+
+2018-3-14
+ALTER TABLE `cities` ADD `article` TEXT NULL AFTER `main_city_id`;
+
+2018-10-10
+INSERT INTO `ad_upgrade_package` (`package_id`, `priority_id`, `priority_name`, `priority_limit`, `sale_price`, `rentals_price`, `land_price`, `agents_price`, `services_price`, `wanted_price`, `package_status`) VALUES (NULL, '7', 'Prime Ad', '9', '1500', '1500', '1500', '1500', '1500', '0', '1')
+
+CREATE TABLE `lpw`.`ih_pic_category` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`));
+
+INSERT INTO ih_pic_category (name) VALUES ('LIVING ROOM'), ('BED ROOM'), ('BATH ROOM'), ('KITCHEN'), ('GARDEN'), ('+ROOMS'), ('REAL HOMES'), ('ADVICE')
+             
+
+2018-8-14
+ALTER TABLE `pics` ADD `user_id` INT(11) NULL DEFAULT NULL AFTER `tag`, ADD `pic_category` VARCHAR(255) NULL AFTER `user_id`;
+ALTER TABLE `adverts` ADD `is_prime` SMALLINT(3) NOT NULL DEFAULT '0' AFTER `min_term_days`;
+ALTER TABLE `upgraded_ads` ADD `sub_cat_id` INT(11) NULL DEFAULT NULL AFTER `category`;
+
+2018-7-6
+ALTER TABLE `admin_member_packages` ADD `monthly_payment` DOUBLE(8,2) NOT NULL AFTER `free_credit_limit`;
+
+2018-5-24
+ALTER TABLE `pp_payments` ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`);
+
+UPDATE `admin_member_packages` SET `monthly_payment` = '920.00' WHERE `admin_member_packages`.`id` = 3;
+UPDATE `admin_member_packages` SET `monthly_payment` = '862.50' WHERE `admin_member_packages`.`id` = 4;
+UPDATE `admin_member_packages` SET `monthly_payment` = '1696.25' WHERE `admin_member_packages`.`id` = 5;
+UPDATE `admin_member_packages` SET `monthly_payment` = '3162.50' WHERE `admin_member_packages`.`id` = 6;
+UPDATE `admin_member_packages` SET `monthly_payment` = '5635.00' WHERE `admin_member_packages`.`id` = 7;
+UPDATE `admin_member_packages` SET `monthly_payment` = '8970.00' WHERE `admin_member_packages`.`id` = 8;
+UPDATE `admin_member_packages` SET `monthly_payment` = '11212.50' WHERE `admin_member_packages`.`id` = 9;
+
+2018/6/7
+2018/5/4
+ALTER TABLE `users` MODIFY COLUMN `user_type` ENUM('D','A','O','P') DEFAULT NULL COMMENT 'D for Developer, A for Agents, O for Owner, P for sell fast agent';
+adverts_contacts.sql
+country_codes.sql
+
+2018/5/14
+link folder
+email/template folder
+myaccount/ma_login.php
+scripts/pending_payment_warning.php
+scripts/email_schedule.php
+
+2018/5/14
+2018/5/14
+ALTER TABLE `adverts` ADD `deactivated_by_system` TINYINT(1) NOT NULL DEFAULT '0' AFTER `token`;
+2017/1/5
+ALTER TABLE `contact_stats` ADD `last_total_stats` INT NOT NULL DEFAULT '0' AFTER `UID`;
+ALTER TABLE `adverts` ADD `token` VARCHAR(50) NULL DEFAULT NULL AFTER `current_page_id`;
+
+2018/2/2
+open this url /version/2017-1-5
+
+sql query if there any issue------------
+ALTER TABLE `admin_users` ADD `admin_level` TINYINT NOT NULL DEFAULT '0' AFTER `email`;
+ALTER TABLE `admin_members_actions` ADD `reminder` DATE NULL AFTER `comments`;
+ALTER TABLE `admin_members` ADD `package_amount` DOUBLE(8,2) NOT NULL AFTER `category`;
+ALTER TABLE `admin_members` ADD `custom_amount` TINYINT(1) NOT NULL DEFAULT '0' AFTER `category`;
+CREATE TABLE `property_new`.`payment_log` ( `id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `amount` DOUBLE(8,2) NOT NULL , `assign_id` VARCHAR(50) NULL , `assign_type` INT NULL , `updated_at` TIMESTAMP NOT NULL , `created_at` TIMESTAMP NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `admin_users` ADD `target` DOUBLE(8,2) NULL AFTER `admin_level`;
+

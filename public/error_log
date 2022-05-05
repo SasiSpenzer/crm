@@ -1,0 +1,5 @@
+[21-Feb-2017 10:50:14 UTC] PHP Fatal error:  Call to a member function toArray() on null in /home1/qtdnvlmy/public_html/dev/LPW-Admin/app/Repositories/EloquentCustomerRepository.php on line 42
+[07-Mar-2017 07:10:32 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 81 bytes) in /home1/qtdnvlmy/public_html/dev/LPW-Admin/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 325
+[07-Mar-2017 07:10:49 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 33 bytes) in /home1/qtdnvlmy/public_html/dev/LPW-Admin/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 325
+[07-Mar-2017 07:11:06 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 81 bytes) in /home1/qtdnvlmy/public_html/dev/LPW-Admin/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 325
+[07-Mar-2017 07:11:34 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home1/qtdnvlmy/public_html/dev/LPW-Admin/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 325
